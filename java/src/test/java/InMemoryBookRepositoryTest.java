@@ -10,7 +10,9 @@ class InMemoryBookRepositoryTest {
     should_find_book_by_author() {
         var refactoringToPatterns = new Book("Refactoring to Patterns", "Joshua");
         repository.add("abcd", refactoringToPatterns);
+
         var result = repository.byAuthor("Joshua");
+
         assertThat(result).containsExactly(refactoringToPatterns);
     }
 
@@ -19,7 +21,9 @@ class InMemoryBookRepositoryTest {
         var refactoringToPatterns = new Book("Refactoring to Patterns", "Joshua");
         repository.add("abcd", refactoringToPatterns);
         repository.byAuthor("Joshua");
+
         var result = repository.byAuthor("Joshua");
+
         assertThat(result).containsExactly(refactoringToPatterns);
     }
 
