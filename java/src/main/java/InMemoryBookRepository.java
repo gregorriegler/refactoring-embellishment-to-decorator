@@ -9,6 +9,7 @@ public class InMemoryBookRepository {
     private final Map<String, List<Book>> byAuthorsCache = new HashMap<>();
 
     public void add(String isbn, Book book) {
+        byAuthorsCache.clear();
         books.put(isbn, book);
     }
 
